@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "medicamentos2-6dd2b": {
+      "hosting": {
+        "login": [
+          "medicamentos2-6dd2b"
+        ]
+      }
+    }
+  }
+}
