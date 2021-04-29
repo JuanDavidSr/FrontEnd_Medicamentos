@@ -18,8 +18,8 @@ export class AuthService {
     const result = await this.afAuth.createUserWithEmailAndPassword(email,password);
     return result;
   }
-  async logout(){
-    await this.afAuth.signOut();
+   logout(){
+     this.afAuth.signOut();
     
   }
   getCurrentUser(){

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { AuthService } from '../../auth/service/auth.service';
 
 @Component({
@@ -7,16 +8,20 @@ import { AuthService } from '../../auth/service/auth.service';
   styleUrls: ['./navbar.component.scss'],
   providers:[AuthService],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
+  
+  public user:any;
+  public user$: Observable<any> =this.authsvc.afAuth.user;
 
   constructor(private authsvc:AuthService) { }
 
-  async ngOnInit(): Promise<void> {
-    console.log('navbar');
-    const user = await this.authsvc.getCurrentUser()
-    if(user){
-      console.log('User->', user);
-    }
+ 
+
+  onLogout(){
+    console.log('usuario salio');
+    this.authsvc.logout();
+    
+    
   }
 
 }
