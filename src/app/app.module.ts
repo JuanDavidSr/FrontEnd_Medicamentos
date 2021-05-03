@@ -8,20 +8,28 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule} from'@angular/fire/auth';
+import { EmployeeFormModule } from './shared/components/employee-form/employee-form.module';
+import { AngularFirestore } from '@angular/fire/firestore'; 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+ 
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    EmployeeFormModule,
+    
+ 
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

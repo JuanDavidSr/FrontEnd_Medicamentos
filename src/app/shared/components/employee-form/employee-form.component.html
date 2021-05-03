@@ -1,0 +1,46 @@
+<form class="mt-3 offset-md-2" (ngSubmit) ="onSave()" [formGroup]="employeeForm" >
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control" placeholder="name" formControlName="name" 
+            [class] ="isValidField('name')">
+            <div class="invalid-feedback" *ngIf="employeeForm.get('name').errors?.required">
+                <span>este campo es requerido</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName"
+            [class] ="isValidField('lastName')">
+            <div class="invalid-feedback" *ngIf="employeeForm.get('lastName').errors?.required">
+                <span>este campo es requerido</span>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control" placeholder="email" formControlName="email"
+            [class] ="isValidField('email')">
+            <div class="invalid-feedback" *ngIf="employeeForm.get('name').errors?.required">
+                <span>este campo es requerido</span>
+            </div>
+            <div class="invalid-feedback" *ngIf="employeeForm.get('name').errors?.pattern">
+                <span>Ingresa un email valido</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control" placeholder="StartDate" formControlName="startDate"
+            [class] ="isValidField('startDate')">
+            <div class="invalid-feedback" *ngIf="employeeForm.get('startDate').errors?.required">
+                <span>este campo es requerido</span>
+            </div>
+        </div>
+    </div>
+<button type="submit" class="btn bg-dark btn-block text-light md-8">Save</button>
+</form>
+<button type="button" class="btn btn-secondary mt-2"(click)="onGoBackList()" >Ir a la lista</button>

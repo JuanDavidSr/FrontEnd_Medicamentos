@@ -18,9 +18,8 @@ export class NavbarComponent {
  
 
   onLogout(){
-    console.log('usuario salio');
     this.authsvc.logout();
-    
+    alert('Seccion Cerrada Exitosamente');
     
   }
 

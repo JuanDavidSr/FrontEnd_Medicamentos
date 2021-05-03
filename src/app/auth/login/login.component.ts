@@ -28,10 +28,12 @@ export class LoginComponent implements OnInit {
       const user = await this.authsvc.login(email,password);
       if(user){
         this.router.navigate(['/home']);
+        alert('Bienvenido ' + email);
       }
 
     }catch(error){
       console.log(error)
+      alert('Usuario no encontrado verifica la informacion');
     }
    
   }

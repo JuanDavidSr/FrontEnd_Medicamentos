@@ -31,6 +31,7 @@ export class RegisterComponent implements OnInit {
     }
     catch(error){
       console.log(error)
+      alert('El usuario ya cuenta con una cuenta ó no puede ser creado');
     }
    
   }
