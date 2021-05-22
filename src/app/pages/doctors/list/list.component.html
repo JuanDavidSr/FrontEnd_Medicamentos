@@ -1,19 +1,35 @@
-  <div class="table-responsive">
+<br>  
+<div class="row offset-md-8">  
+  <div class="col-8">
+      <select name="FiltEstado" id="FiltEstado" class="form-control ">
+          <option hidden selected>Selecciona una especializacion</option>
+          <option value=""  >Todos</option>
+          <option value="Habilitado">Habilitado</option>
+          <option value="Deshabilitado">Deshabilitado</option>
+        </select>
+  </div>
+  <br>
+   <div class="col-4">
+       <button type="submit" class="btn btn-primary">Filtar</button>
+      </div>
+</div>
+<br>
+<div class="table-responsive">
     <table class="table table-hover">
         <thead>
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
-            <th scope="col">Star Date</th>
-            <th class="d-none d-sm-block" scope="col">Actiosn</th>
+            <th scope="col">Especializacion</th>
+            <th  scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr class="table-info" *ngFor="let item of employee$ | async">
             <th scope="row">{{item.name}} {{item.lastName}}</th>
             <td>{{item.email}} </td>
-            <td>{{item.startDate}} </td>
-            <td class="btn-group  d-none d-sm-block" role="group">
+            <td>{{item.especializacion}} </td>
+            <td class="btn-group  " role="group">
                 <button type="button" class="btn btn-outline-warning m-1" (click)="onGoToEdit(item)">Edit</button>
                 <button type="button" class="btn btn-outline-warning m-1" (click)="onGoToSee(item)">See</button>
                 <button type="button" class="btn btn-outline-danger m-1" (click)="onGoToDelete(item.id)">Delete</button>

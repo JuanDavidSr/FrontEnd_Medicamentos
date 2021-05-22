@@ -9,14 +9,15 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule} from'@angular/fire/auth';
 import { EmployeeFormModule } from './shared/components/employee-form/employee-form.module';
-import { AngularFirestore } from '@angular/fire/firestore'; 
+import { AngularFirestore } from '@angular/fire/firestore';
+import { PharmacyFormComponent } from './shared/components/pharmacy-form/pharmacy-form.component';
+import { PharmacyFormModule } from './shared/components/pharmacy-form/pharmacy-form.module'; 
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
- 
 
   ],
   imports: [
@@ -26,8 +27,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     EmployeeFormModule,
-    
- 
+    PharmacyFormModule,
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]

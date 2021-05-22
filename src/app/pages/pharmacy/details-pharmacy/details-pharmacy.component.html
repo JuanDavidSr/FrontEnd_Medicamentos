@@ -1,0 +1,26 @@
+<div class="card mt-2">
+    <div class="card-header">
+        Detalles
+    </div>
+    <div class="card-body">
+        <ul class="list-goup">
+            <li class="list-group-item">
+                name: <h5>{{pharmacy.name}}</h5>
+            </li>
+            <li class="list-group-item">
+                Email: <h5>{{pharmacy.correo}}</h5>
+            </li>
+            <li class="list-group-item">
+                date: <h5>{{pharmacy.direccion}}</h5>
+            </li>
+            <li class="list-group-item">
+                date: <h5>{{pharmacy.horarios}}</h5>
+            </li>
+        </ul>
+    </div>
+    <div class="btn-grop" role="group">
+        <button type="button" class="btn btn-outline-warning m-1" (click)="onGoToEditPharmacy()">edit</button>
+        <button type="button" class="btn btn-outline-danger m-1"(click)="onDelete()">Delete</button>
+    </div>
+</div>
+<button type="button" class="btn btn-secondary mt-2" (click)="onGoBackToList()">Atras</button>

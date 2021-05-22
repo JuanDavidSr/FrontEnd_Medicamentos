@@ -13,6 +13,10 @@ pathMatch:'full'
 { path: 'new', loadChildren: () => import('./pages/doctors/new/new.module').then(m => m.NewModule) },
 { path: 'details', loadChildren: () => import('./pages/doctors/details/details.module').then(m => m.DetailsModule) },
 { path: 'edit', loadChildren: () => import('./pages/doctors/edit/edit.module').then(m => m.EditModule) },
+{ path: 'listPharmacy', loadChildren: () => import('./pages/pharmacy/list-pharmacy/list-pharmacy.module').then(m => m.ListPharmacyModule) },
+{ path: 'newPharmacy', loadChildren: () => import('./pages/pharmacy/new-pharmacy/new-pharmacy.module').then(m => m.NewPharmacyModule) },
+{ path: 'detailsPharmacy', loadChildren: () => import('./pages/pharmacy/details-pharmacy/details-pharmacy.module').then(m => m.DetailsPharmacyModule) },
+{ path: 'editPharmacy', loadChildren: () => import('./pages/pharmacy/edit-pharmacy/edit-pharmacy.module').then(m => m.EditPharmacyModule) },
 ];
 
 @NgModule({

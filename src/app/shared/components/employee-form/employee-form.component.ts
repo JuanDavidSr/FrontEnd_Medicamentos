@@ -53,6 +53,8 @@ this.router.navigate(['list'])
       lastName:['',[Validators.required]],
       email:['',[Validators.required,Validators.pattern(this.isEmail)]],
       startDate:['',[Validators.required]],
+      especializacion:['',[Validators.required]],
+      cedula:['',[Validators.required]]
 
     })
   }

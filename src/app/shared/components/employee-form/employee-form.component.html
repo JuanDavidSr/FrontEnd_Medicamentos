@@ -1,7 +1,7 @@
 <form class="mt-3 offset-md-2" (ngSubmit) ="onSave()" [formGroup]="employeeForm" >
-
+    <a >Nombre</a>
     <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-12">
             <input type="text" class="form-control" placeholder="name" formControlName="name" 
             [class] ="isValidField('name')">
             <div class="invalid-feedback" *ngIf="employeeForm.get('name').errors?.required">
@@ -9,9 +9,9 @@
             </div>
         </div>
     </div>
-
+    <a >Apellidos</a>
     <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-12">
             <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName"
             [class] ="isValidField('lastName')">
             <div class="invalid-feedback" *ngIf="employeeForm.get('lastName').errors?.required">
@@ -19,9 +19,20 @@
             </div>
         </div>
     </div>
+    <a >Cedula</a>
     <div class="form-row">
-        <div class="form-group col-md-6">
-            <input type="text" class="form-control" placeholder="email" formControlName="email"
+        <div class="form-group col-md-12">
+            <input type="number" class="form-control" placeholder="cedula" formControlName="cedula"
+            [class] ="isValidField('cedula')">
+            <div class="invalid-feedback" *ngIf="employeeForm.get('cedula').errors?.required">
+                <span>este campo es requerido</span>
+            </div>
+        </div>
+    </div>
+    <a >Correo Personal</a>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <input type="email" class="form-control" placeholder="email" formControlName="email"
             [class] ="isValidField('email')">
             <div class="invalid-feedback" *ngIf="employeeForm.get('name').errors?.required">
                 <span>este campo es requerido</span>
@@ -31,16 +42,35 @@
             </div>
         </div>
     </div>
-
+    <a >Especializacion</a>
     <div class="form-row">
-        <div class="form-group col-md-6">
-            <input type="text" class="form-control" placeholder="StartDate" formControlName="startDate"
+        <div class="form-group col-md-12">
+            <select name="deporte" class="form-control" placeholder="Oncologia,General ..." formControlName="especializacion"  [class] ="isValidField('especializacion')">
+                <option>Oncologia</option>
+                <option>Pediatria</option>
+                <option>Ginecologia</option>
+                <option>General</option>
+                <option>Anestesiologo</option>
+              </select>
+            <div class="invalid-feedback" *ngIf="employeeForm.get('especializacion').errors?.required">
+                <span>este campo es requerido</span>
+            </div>
+        </div>
+    </div>
+    <a >Fecha de inicio</a>
+    <div class="form-row">
+        
+        <div class="form-group col-md-12">
+            <input type="date" class="form-control" placeholder="StartDate" formControlName="startDate"
             [class] ="isValidField('startDate')">
             <div class="invalid-feedback" *ngIf="employeeForm.get('startDate').errors?.required">
                 <span>este campo es requerido</span>
             </div>
         </div>
     </div>
+
+
+
 <button type="submit" class="btn bg-dark btn-block text-light md-8">Save</button>
 </form>
-<button type="button" class="btn btn-secondary mt-2"(click)="onGoBackList()" >Ir a la lista</button>
+<button type="button" class="btn btn-primary mt-2"(click)="onGoBackList()" >Ir a la lista</button>
