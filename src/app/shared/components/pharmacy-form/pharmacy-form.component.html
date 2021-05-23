@@ -1,20 +1,40 @@
 <form action="" class="mt-3 col-md-8 offset-md-2" (ngSubmit)="onSave()" [formGroup]="pharmacyForm">
     <div class="form-row">
         <div class="form-group col-md-6">
-            <input type="text" class="form-control" placeholder="nombre" formControlName="name">
+            <input type="text" class="form-control" placeholder="nombre" formControlName="name" [class]="isValidField('name')">
+            <div class="invalid-feedback">
+                <span *ngIf="pharmacyForm.get('name').errors?.required">
+                        Este campo es requerido
+                </span>
+            </div>
         </div>
         
         <div class="form-group col-md-6">
-            <input type="text" class="form-control" placeholder="Correo" formControlName="correo">
+            <input type="text" class="form-control" placeholder="Correo" formControlName="correo" [class]="isValidField('correo')">
+            <div class="invalid-feedback">
+                <span *ngIf="pharmacyForm.get('name').errors?.required">
+                        Este campo es requerido
+                </span>
+            </div>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-            <input type="text" class="form-control" placeholder="direccion" formControlName="direccion">
+            <input type="text" class="form-control" placeholder="direccion" formControlName="direccion" [class]="isValidField('direccion')">
+            <div class="invalid-feedback">
+                <span *ngIf="pharmacyForm.get('name').errors?.required">
+                        Este campo es requerido
+                </span>
+            </div>
         </div>
         
         <div class="form-group col-md-6">
-            <input type="text" class="form-control" placeholder="Horarios" formControlName="horarios">
+            <input type="text" class="form-control" placeholder="Horarios" formControlName="horarios" [class]="isValidField('horarios')">
+            <div class="invalid-feedback">
+                <span *ngIf="pharmacyForm.get('name').errors?.required">
+                        Este campo es requerido
+                </span>
+            </div>
         </div>
     </div>
     <button type="submit" class="btn bg-dark btn-block text-light">save</button>

@@ -10,7 +10,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="table-info" *ngFor="let item of fakeData"> <!--\pharmacy$ | async">-->
+          <tr class="table-info" *ngFor="let item of pharmacy$ | async"> <!--\pharmacy$ | async">-->
             <th scope="row">{{item.name}}</th>
             <td>{{item.correo}}</td>
             <td>{{item.direccion}}</td>
@@ -18,7 +18,7 @@
             <td class="btn-group  " role="group">
                 <button type="button" class="btn btn-outline-warning m-1" (click)="onGoToEditPharmacy(item)">Edit</button>
                 <button type="button" class="btn btn-outline-warning m-1" (click)="onGoToSeePharmacy(item)">See</button>
-                <button type="button" class="btn btn-outline-danger m-1" (click)="onGoToDeletePharmacy(item)">Delete</button>
+                <button type="button" class="btn btn-outline-danger m-1" (click)="onGoToDeletePharmacy(item.id)">Delete</button>
             </td>
           </tr>
         </tbody>

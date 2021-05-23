@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { EditPharmacyRoutingModule } from './edit-pharmacy-routing.module';
 import { EditPharmacyComponent } from './edit-pharmacy.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PharmacyFormModule } from '../../../shared/components/pharmacy-form/pharmacy-form.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     EditPharmacyRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PharmacyFormModule
   ]
 })
 export class EditPharmacyModule { }

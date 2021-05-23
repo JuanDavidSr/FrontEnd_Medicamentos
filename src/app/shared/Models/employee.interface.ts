@@ -8,6 +8,7 @@ export interface Employee{
     cedula: number;
 }
 export interface pharmacy{
+    id?:string;
     name:string;
     correo:string;
     direccion:string;
